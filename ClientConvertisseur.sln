@@ -5,6 +5,8 @@ VisualStudioVersion = 17.6.33829.357
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientConvertisseurV1", "ClientConvertisseurV1\ClientConvertisseurV1.csproj", "{CA258B75-4592-4723-82C9-667598689653}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientConvertisseurV2", "ClientConvertisseurV2\ClientConvertisseurV2.csproj", "{BE1E18CD-5B5D-46CE-88D0-D6D103247F0C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|ARM64 = Debug|ARM64
@@ -33,6 +35,24 @@ Global
 		{CA258B75-4592-4723-82C9-667598689653}.Release|x86.ActiveCfg = Release|x86
 		{CA258B75-4592-4723-82C9-667598689653}.Release|x86.Build.0 = Release|x86
 		{CA258B75-4592-4723-82C9-667598689653}.Release|x86.Deploy.0 = Release|x86
+		{BE1E18CD-5B5D-46CE-88D0-D6D103247F0C}.Debug|ARM64.ActiveCfg = Debug|ARM64
+		{BE1E18CD-5B5D-46CE-88D0-D6D103247F0C}.Debug|ARM64.Build.0 = Debug|ARM64
+		{BE1E18CD-5B5D-46CE-88D0-D6D103247F0C}.Debug|ARM64.Deploy.0 = Debug|ARM64
+		{BE1E18CD-5B5D-46CE-88D0-D6D103247F0C}.Debug|x64.ActiveCfg = Debug|x64
+		{BE1E18CD-5B5D-46CE-88D0-D6D103247F0C}.Debug|x64.Build.0 = Debug|x64
+		{BE1E18CD-5B5D-46CE-88D0-D6D103247F0C}.Debug|x64.Deploy.0 = Debug|x64
+		{BE1E18CD-5B5D-46CE-88D0-D6D103247F0C}.Debug|x86.ActiveCfg = Debug|x86
+		{BE1E18CD-5B5D-46CE-88D0-D6D103247F0C}.Debug|x86.Build.0 = Debug|x86
+		{BE1E18CD-5B5D-46CE-88D0-D6D103247F0C}.Debug|x86.Deploy.0 = Debug|x86
+		{BE1E18CD-5B5D-46CE-88D0-D6D103247F0C}.Release|ARM64.ActiveCfg = Release|ARM64
+		{BE1E18CD-5B5D-46CE-88D0-D6D103247F0C}.Release|ARM64.Build.0 = Release|ARM64
+		{BE1E18CD-5B5D-46CE-88D0-D6D103247F0C}.Release|ARM64.Deploy.0 = Release|ARM64
+		{BE1E18CD-5B5D-46CE-88D0-D6D103247F0C}.Release|x64.ActiveCfg = Release|x64
+		{BE1E18CD-5B5D-46CE-88D0-D6D103247F0C}.Release|x64.Build.0 = Release|x64
+		{BE1E18CD-5B5D-46CE-88D0-D6D103247F0C}.Release|x64.Deploy.0 = Release|x64
+		{BE1E18CD-5B5D-46CE-88D0-D6D103247F0C}.Release|x86.ActiveCfg = Release|x86
+		{BE1E18CD-5B5D-46CE-88D0-D6D103247F0C}.Release|x86.Build.0 = Release|x86
+		{BE1E18CD-5B5D-46CE-88D0-D6D103247F0C}.Release|x86.Deploy.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

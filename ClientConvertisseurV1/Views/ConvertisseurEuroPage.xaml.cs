@@ -1,4 +1,4 @@
-using ClientConvertisseurV1.Models;
+using ClientConvertisseurV1.Services;
 using Microsoft.UI.Windowing;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
@@ -15,6 +15,7 @@ using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading.Tasks;
 using System.Xml.Linq;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
@@ -83,7 +84,7 @@ namespace ClientConvertisseurV1.Views
 
             if (result == null)
             {
-                MessageAsync("API non disponible !", "Erreur");
+                await MessageAsync("API non disponible !", "Erreur");
             }
             else
             {
@@ -91,26 +92,27 @@ namespace ClientConvertisseurV1.Views
             }
         }
 
-        private async void MessageAsync(string message, string titre)
+        private async Task MessageAsync(string message, string titre)
         {
-            //ContentDialog contentDialog = new ContentDialog
-            //{
-            //    Title = titre,
-            //    Content = message,
-            //    CloseButtonText = "Ok"
-            //};
-            //contentDialog.XamlRoot = this.Content.XamlRoot;
-            //await contentDialog.ShowAsync();
+            ContentDialog contentDialog = new ContentDialog
+            {
+                Title = titre,
+                Content = message,
+                CloseButtonText = "Ok"
+            };
+            contentDialog.XamlRoot = this.Content.XamlRoot;
+            await contentDialog.ShowAsync();
         }
 
-        private void BtConvertir_Click(object sender, RoutedEventArgs e)
+        private async void BtConvertir_Click(object sender, RoutedEventArgs e)
         {
             Devise d = (Devise)CbDevise.SelectedItem;
             if (d == null)
             {
-                throw new ArgumentException("aucune devise selectionné");
+                await MessageAsync("Aucune devise selectionnée !", "Erreur");
             }
-            Resultat = MontantEuro * d.Taux;
+            else
+                Resultat = MontantEuro * d.Taux;
         }
     }
 }

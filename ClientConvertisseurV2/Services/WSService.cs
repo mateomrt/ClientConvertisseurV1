@@ -1,4 +1,4 @@
-﻿using ClientConvertisseurV1.Services;
+﻿using ClientConvertisseurV2.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,9 +7,8 @@ using System.Net.Http.Headers;
 using System.Net.Http.Json;
 using System.Text;
 using System.Threading.Tasks;
-using WSConvertisseur.Models;
 
-namespace ClientConvertisseurV1.Models
+namespace ClientConvertisseurV2.Services
 {
     internal class WSService : IService
     {
