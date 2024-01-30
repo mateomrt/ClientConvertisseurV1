@@ -2,6 +2,7 @@
 using ClientConvertisseurV2.Models;
 using ClientConvertisseurV2.Services;
 using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using Microsoft.UI.Xaml.Controls;
 using System;
 using System.Collections.Generic;
@@ -12,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace ClientConvertisseurV2.ViewModels
 {
-    internal class ConvertisseurEuroViewModel: ObservableObject
+    public class ConvertisseurEuroViewModel: ObservableObject
     {
         
         
@@ -51,14 +52,38 @@ namespace ClientConvertisseurV2.ViewModels
             }
         }
 
+        private Devise selectedDevise;
+        public Devise SelectedDevise
+        { //Property Resultat
+            get { return selectedDevise; }
+            set
+            {
+                selectedDevise = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public IRelayCommand BtnSetConversion { get; }
         public ConvertisseurEuroViewModel()
         {
             GetDataOnLoadAsync();
+            //Boutons
+            BtnSetConversion = new RelayCommand(ActionSetConversion);
+        }
+        public async void ActionSetConversion()
+        {
+            Devise d = SelectedDevise;
+            if (d == null)
+                await MessageAsync("Il faut selectionner une devise !", "Erreur");
+            else
+                Resultat = MontantEuro * d.Taux;
+
         }
 
 
 
-        private async void GetDataOnLoadAsync()
+
+        public async void GetDataOnLoadAsync()
         {
             WSService service = new WSService("https://localhost:7228/api/");
             List<Devise> result = await service.GetDevisesAsync("devises");
@@ -81,6 +106,7 @@ namespace ClientConvertisseurV2.ViewModels
                 Content = message,
                 CloseButtonText = "Ok"
             };
+            contentDialog.XamlRoot = App.MainRoot.XamlRoot;
             await contentDialog.ShowAsync();
         }
 
