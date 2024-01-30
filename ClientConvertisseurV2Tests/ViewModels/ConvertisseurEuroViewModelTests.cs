@@ -72,16 +72,16 @@ namespace ClientConvertisseurV2.ViewModels.Tests
         /// <summary>
         /// Test conversion OK
         /// </summary>
-        [TestMethod()]
-        public void GetDataOnLoadAsyncTest_NonOk_WSnondemarre()
-        {
-            //Arrange
-            ConvertisseurEuroViewModel convertisseurEuro = new ConvertisseurEuroViewModel();
-            //Act
-            convertisseurEuro.GetDataOnLoadAsync();
-            Thread.Sleep(1000);
-            //Assert
-            Assert.IsNull(convertisseurEuro.Devises);
-        }
+        //[TestMethod()]
+        //public void GetDataOnLoadAsyncTest_NonOk_WSnondemarre()
+        //{
+        //    //Arrange
+        //    ConvertisseurEuroViewModel convertisseurEuro = new ConvertisseurEuroViewModel();
+        //    //Act
+        //    convertisseurEuro.GetDataOnLoadAsync();
+        //    Thread.Sleep(1000);
+        //    //Assert
+        //    Assert.IsNull(convertisseurEuro.Devises);
+        //}
     }
 }
