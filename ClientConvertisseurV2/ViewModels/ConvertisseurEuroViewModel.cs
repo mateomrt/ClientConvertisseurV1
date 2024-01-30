@@ -14,6 +14,8 @@ namespace ClientConvertisseurV2.ViewModels
 {
     internal class ConvertisseurEuroViewModel: ObservableObject
     {
+        
+        
         private ObservableCollection<Devise> devises;
         public ObservableCollection<Devise> Devises
         {
@@ -47,6 +49,11 @@ namespace ClientConvertisseurV2.ViewModels
                 resultat = value;
                 OnPropertyChanged();
             }
+        }
+
+        public ConvertisseurEuroViewModel()
+        {
+            GetDataOnLoadAsync();
         }
 
 
